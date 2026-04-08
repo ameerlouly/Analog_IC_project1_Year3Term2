@@ -6,7 +6,7 @@ S {}
 E {}
 B 2 -1380 -520 -580 -120 {flags=graph
 y1=-170
-y2=1.2
+y2=6.9
 ypos1=0
 ypos2=2
 divy=5
@@ -26,8 +26,8 @@ logx=1
 logy=0
 }
 B 2 -2200 -520 -1400 -120 {flags=graph
-y1=-68
-y2=1.2
+y1=-160
+y2=6.8
 ypos1=0
 ypos2=2
 divy=5
@@ -47,7 +47,7 @@ color=4
 node="vout_lpf db20()"}
 B 2 -1380 -100 -580 300 {flags=graph
 y1=-81
-y2=-0.002
+y2=6.9
 ypos1=0
 ypos2=2
 divy=5
@@ -67,8 +67,8 @@ logx=1
 logy=0
 }
 B 2 -2200 -100 -1400 300 {flags=graph
-y1=-43
-y2=-0.0034
+y1=-33
+y2=-0.0021
 ypos1=0
 ypos2=2
 divy=5
