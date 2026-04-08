@@ -18,5 +18,5 @@ C {devices/gnd.sym} -90 80 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} 300 -20 2 0 {name=p2 sig_type=std_logic lab=VOUT
 }
 C {devices/code.sym} 160 60 0 0 {name=Sim_Script only_toplevel=false value="
-ac
+.include "sim_script_OL.sim"
 "}

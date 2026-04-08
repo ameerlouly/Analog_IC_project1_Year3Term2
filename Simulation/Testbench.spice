@@ -1,19 +1,19 @@
 ** sch_path: /home/tare/EECE_Projects/Analog_IC_project1/Design/Testbench.sch
 **.subckt Testbench
-x1 VOUT_LPF net2 GND Idead_opamp
-x2 VOUT_HPF net1 GND Idead_opamp
+x1 VOUT_LPF net1 GND Idead_opamp
+x2 VOUT_HPF net3 GND Idead_opamp
 x3 VOUT_BPF net4 GND Idead_opamp
-x4 VOUT_BSF net3 GND Idead_opamp
-R1 net3 VOUT_BPF 1k m=1
-C1 VOUT_BPF net4 1p m=1
-R2 net3 VIN 1k m=1
-R3 VOUT_BSF net3 1k m=1
-R4 net1 VOUT_BSF 1k m=1
-R5 net4 VOUT_HPF 1k m=1
-R6 net2 VOUT_BPF 1k m=1
-R7 net1 VOUT_LPF 1k m=1
-R8 VOUT_HPF net1 1k m=1
-C2 VOUT_LPF net2 1p m=1
+x4 VOUT_BSF net2 GND Idead_opamp
+R1 net2 VOUT_BPF 22k m=1
+C1 VOUT_BPF net4 16p m=1
+R2 net2 VIN 10k m=1
+R3 VOUT_BSF net2 10k m=1
+R4 net3 VOUT_BSF 10k m=1
+R5 net4 VOUT_HPF 10k m=1
+R6 net1 VOUT_BPF 10k m=1
+R7 net3 VOUT_LPF 10k m=1
+R8 VOUT_HPF net3 10k m=1
+C2 VOUT_LPF net1 16p m=1
 V1 VIN GND AC 1
 **** begin user architecture code
 
@@ -30,7 +30,7 @@ V1 VIN GND AC 1
 *.iopin V+
 *.iopin VOUT
 E1 VOUT1 GND V+ V- 10000
-B1 VOUT GND V = limit(V(VOUT1), -1, 1) m=1
+B1 VOUT GND V = max(-1, min(1, V(VOUT1))) m=1
 .ends
 
 .GLOBAL GND

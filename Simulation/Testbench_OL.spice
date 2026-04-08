@@ -5,7 +5,7 @@ V1 VIN GND DC 0 AC 1
 **** begin user architecture code
 
 
-ac
+.include sim_script_OL.sim
 
 
 **** end user architecture code
@@ -18,7 +18,8 @@ ac
 *.iopin V-
 *.iopin V+
 *.iopin VOUT
-E1 VOUT GND V+ V- 10000
+E1 VOUT1 GND V+ V- 10000
+B1 VOUT GND V = max(-1, min(1, V(VOUT1))) m=1
 .ends
 
 .GLOBAL GND

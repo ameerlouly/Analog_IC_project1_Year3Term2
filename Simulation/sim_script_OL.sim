@@ -1,3 +1,4 @@
+.control
 *?  Small Signal
     * shell rm Testbench.raw
     save all
@@ -7,5 +8,6 @@
     * let Gain_dB = db(Gain)
     * print Gain_dB
     set appendwrite
-    write Testbench.raw
+    write Testbench_OL.raw
+.endc
     

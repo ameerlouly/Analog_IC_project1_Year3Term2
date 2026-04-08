@@ -1,14 +1,18 @@
+.control
 *?  Small Signal
-    * shell rm Testbench.raw
+    shell rm Testbench.raw
     save all
     ac dec 10 1 10G
     plot VOUT_BPF
     plot VOUT_BSF
     plot VOUT_LPF
     plot VOUT_HPF
+    
+    * save VOUT_BPF VOUT_BSF VOUT_LPF VOUT_HPF
     * meas ac Gain MAX vmag(VOUTDIFF)
     * let Gain_dB = db(Gain)
     * print Gain_dB
     set appendwrite
-    write Testbench.raw
+    write Testbench.raw VOUT_BPF VOUT_BSF VOUT_LPF VOUT_HPF
+.endc
     
