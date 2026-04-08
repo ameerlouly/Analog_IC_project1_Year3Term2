@@ -2,10 +2,7 @@
     * shell rm Testbench.raw
     save all
     ac dec 10 1 10G
-    plot VOUT_BPF
-    plot VOUT_BSF
-    plot VOUT_LPF
-    plot VOUT_HPF
+    plot VOUT
     * meas ac Gain MAX vmag(VOUTDIFF)
     * let Gain_dB = db(Gain)
     * print Gain_dB

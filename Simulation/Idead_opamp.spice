@@ -1,0 +1,10 @@
+** sch_path: /home/tare/EECE_Projects/Analog_IC_project1/Design/Idead_opamp.sch
+**.subckt Idead_opamp VOUT V- V+
+*.iopin V-
+*.iopin V+
+*.iopin VOUT
+E1 VOUT1 GND V- V+ 10000
+B1 VOUT GND V = 'limit(V(VOUT1), -1, 1)' m=1
+**.ends
+.GLOBAL GND
+.end

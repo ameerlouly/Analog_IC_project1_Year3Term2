@@ -1,0 +1,25 @@
+** sch_path: /home/tare/EECE_Projects/Analog_IC_project1/Design/Testbench_OL.sch
+**.subckt Testbench_OL
+x1 VOUT VIN GND Idead_opamp
+V1 VIN GND DC 0 AC 1
+**** begin user architecture code
+
+
+ac
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  Idead_opamp.sym # of pins=3
+** sym_path: /home/tare/EECE_Projects/Analog_IC_project1/Design/Idead_opamp.sym
+** sch_path: /home/tare/EECE_Projects/Analog_IC_project1/Design/Idead_opamp.sch
+.subckt Idead_opamp VOUT V- V+
+*.iopin V-
+*.iopin V+
+*.iopin VOUT
+E1 VOUT GND V+ V- 10000
+.ends
+
+.GLOBAL GND
+.end
