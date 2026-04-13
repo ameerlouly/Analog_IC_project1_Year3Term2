@@ -12,8 +12,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=10
+x1=-35
+x2=-5.30103
 divx=5
 subdivx=8
 xlabmag=1.0
@@ -34,7 +34,7 @@ divy=5
 subdivy=4
 unity=1
 x1=0
-x2=10
+x2=5e-06
 divx=5
 subdivx=8
 xlabmag=1.0
@@ -54,8 +54,8 @@ ypos2=2
 divy=5
 subdivy=4
 unity=1
-x1=0
-x2=10
+x1=-35
+x2=-5.30103
 divx=5
 subdivx=8
 xlabmag=1.0
@@ -76,7 +76,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=10
+x2=5e-06
 divx=5
 subdivx=8
 xlabmag=1.0
@@ -89,36 +89,36 @@ logx=1
 logy=0
 }
 B 2 -1380 -1360 -580 -960 {flags=graph
-y1=0.0032
-y2=180
+y1=9.9e-09
+y2=2.3
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=10
+x1=-35
+x2=-5.30103
 divx=5
 subdivx=8
 xlabmag=1.0
 ylabmag=1.0
-node=ph(vout_hpf)
+node=vout_hpf
 color=7
 dataset=-1
 unitx=1
 logx=1
 logy=0
-}
+hcursor2_y=2.1916698}
 B 2 -2200 -1360 -1400 -960 {flags=graph
-y1=-180
-y2=-2.6e-05
+y1=9.8e-09
+y2=2.2
 ypos1=0
 ypos2=2
 divy=5
 subdivy=4
 unity=1
 x1=0
-x2=10
+x2=5e-06
 divx=5
 subdivx=8
 xlabmag=1.0
@@ -128,8 +128,8 @@ unitx=1
 logx=1
 logy=0
 color=4
-node=ph(vout_lpf)
-}
+node=vout_lpf
+hcursor2_y=2.1835073}
 B 2 -1380 -940 -580 -540 {flags=graph
 y1=-180
 y2=180
@@ -138,8 +138,8 @@ ypos2=2
 divy=5
 subdivy=4
 unity=1
-x1=0
-x2=10
+x1=-35
+x2=-5.30103
 divx=5
 subdivx=8
 xlabmag=1.0
@@ -150,7 +150,7 @@ dataset=-1
 unitx=1
 logx=1
 logy=0
-}
+hcursor2_y=-3}
 B 2 -2200 -940 -1400 -540 {flags=graph
 y1=-180
 y2=180
@@ -160,7 +160,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=10
+x2=5e-06
 divx=5
 subdivx=8
 xlabmag=1.0
@@ -171,6 +171,111 @@ logx=1
 logy=0
 color=7
 node=ph(vout_bsf)}
+B 2 1800 -550 2600 -150 {flags=graph
+y1=-0.002
+y2=0.002
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=5e-06
+divx=5
+subdivx=4
+xlabmag=1.0
+ylabmag=1.0
+node=vout_hpf
+color=7
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+B 2 980 -550 1780 -150 {flags=graph
+y1=-0.00091
+y2=0.002
+ypos1=0
+ypos2=2
+divy=5
+subdivy=4
+unity=1
+x1=0
+x2=5e-06
+divx=5
+subdivx=4
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+color=4
+node=vout_lpf
+}
+B 2 1800 -130 2600 270 {flags=graph
+y1=-0.0014
+y2=0.0014
+ypos1=0
+ypos2=2
+divy=5
+subdivy=4
+unity=1
+x1=0
+x2=5e-06
+divx=5
+subdivx=4
+xlabmag=1.0
+ylabmag=1.0
+node=vout_bpf
+color=10
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+B 2 980 -130 1780 270 {flags=graph
+y1=-0.0011
+y2=8.2e-05
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=5e-06
+divx=5
+subdivx=4
+xlabmag=1.0
+ylabmag=1.0
+node=vout_bsf
+color=12
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+B 2 980 -970 1780 -570 {flags=graph
+y1=0
+y2=0.001
+ypos1=0
+ypos2=2
+divy=5
+subdivy=4
+unity=1
+x1=0
+x2=5e-06
+divx=5
+subdivx=4
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+color=4
+node=VIN
+}
 N -280 -510 -280 -490 {lab=GND}
 N -280 -510 -260 -510 {lab=GND}
 N 120 -490 120 -470 {lab=GND}
@@ -221,6 +326,10 @@ N 470 -520 510 -520 {lab=#net3}
 N -290 -560 -270 -560 {lab=#net4}
 N 130 -540 140 -540 {lab=#net1}
 N 390 -520 400 -520 {lab=VOUT_LPF}
+N -280 -340 -280 -330 {lab=VIN}
+N -280 -340 -160 -340 {lab=VIN}
+N -460 -340 -460 -330 {lab=VIN}
+N -460 -340 -280 -340 {lab=VIN}
 C {Idead_opamp.sym} 250 -490 0 0 {name=x1}
 C {Idead_opamp.sym} 660 -470 0 0 {name=x2}
 C {Idead_opamp.sym} -160 -510 0 0 {name=x3}
@@ -239,7 +348,8 @@ C {devices/gnd.sym} 540 -450 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 120 -470 0 0 {name=l2 lab=GND}
 C {devices/gnd.sym} -280 -490 0 0 {name=l3 lab=GND}
 C {devices/gnd.sym} 120 -190 0 0 {name=l4 lab=GND}
-C {devices/code.sym} 610 -320 0 0 {name=Sim_Script only_toplevel=false value=".include sim_script.sim"}
+C {devices/code.sym} 610 -320 0 0 {name=Sim_Script_AC only_toplevel=false value=".include sim_script.sim"
+spice_ignore=true}
 C {devices/res.sym} 40 -190 1 0 {name=R2
 value=10k
 footprint=1206
@@ -285,6 +395,15 @@ C {devices/lab_pin.sym} 30 -540 3 0 {name=p2 sig_type=std_logic lab=VOUT_BPF}
 C {devices/lab_pin.sym} 400 -260 2 0 {name=p3 sig_type=std_logic lab=VOUT_BSF}
 C {devices/lab_pin.sym} 400 -520 3 0 {name=p4 sig_type=std_logic lab=VOUT_LPF}
 C {devices/lab_pin.sym} 830 -500 2 0 {name=p5 sig_type=std_logic lab=VOUT_HPF}
-C {devices/vsource.sym} -160 -300 0 0 {name=V1 value="AC 1" savecurrent=false}
+C {devices/vsource.sym} -160 -300 0 0 {name=V1 value="AC 1" savecurrent=false
+spice_ignore=true}
 C {devices/gnd.sym} -160 -270 0 0 {name=l5 lab=GND}
 C {devices/lab_pin.sym} -160 -360 0 0 {name=p6 sig_type=std_logic lab=VIN}
+C {devices/code.sym} 740 -320 0 0 {name=Sim_Script_tran only_toplevel=false value=".include sim_script_tran.sim"
+}
+C {devices/vsource.sym} -280 -300 0 0 {name=V2 value="SIN(0 1m 1e6 0 0 0)" savecurrent=false
+}
+C {devices/gnd.sym} -280 -270 0 0 {name=l6 lab=GND}
+C {devices/vsource.sym} -460 -300 0 0 {name=V3 value="PULSE(0 1m 0 1n 1n 0.5u 1u)" savecurrent=false
+spice_ignore=true}
+C {devices/gnd.sym} -460 -270 0 0 {name=l7 lab=GND}

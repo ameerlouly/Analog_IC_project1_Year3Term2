@@ -14,10 +14,10 @@ R6 net1 VOUT_BPF 10k m=1
 R7 net3 VOUT_LPF 10k m=1
 R8 VOUT_HPF net3 10k m=1
 C2 VOUT_LPF net1 16p m=1
-V1 VIN GND AC 1
+V2 VIN GND SIN(0 1m 1e6 0 0 0)
 **** begin user architecture code
 
-.include sim_script.sim
+.include sim_script_tran.sim
 
 **** end user architecture code
 **.ends

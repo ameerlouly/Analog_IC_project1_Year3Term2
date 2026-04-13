@@ -1,0 +1,12 @@
+.control
+*?  Small Signal
+    shell rm Testbench_tran.raw
+    save all
+
+    tran 10n 5u
+    
+    set appendwrite
+    write Testbench_tran.raw VOUT_BPF VOUT_BSF VOUT_LPF VOUT_HPF VIN
+
+.endc
+    
