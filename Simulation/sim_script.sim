@@ -3,16 +3,66 @@
     shell rm Testbench.raw
     save all
     ac dec 10 1 10G
-    plot VOUT_BPF
-    plot VOUT_BSF
-    plot VOUT_LPF
-    plot VOUT_HPF
+    * plot VOUT_BPF
+    * plot VOUT_BSF
+    * plot mag(VOUT_LPF)
+    * plot mag(VOUT_HPF)
     
+    * Output Magnitudes for calculations
+    let LPF_mag = mag(VOUT_LPF)
+    let HPF_mag = mag(VOUT_HPF)
+    let BPF_mag = mag(VOUT_BPF)
+    let BSF_mag = mag(VOUT_BSF)
+
+    * Find Q for BSF
+    meas ac gain_DC_HPF find HPF_mag at=10G
+    meas ac gain_DC_LPF find LPF_mag at=1
+    meas ac gain_peak_HPF max HPF_mag
+    meas ac gain_peak_LPF max LPF_mag
+
+    let P_LPF = 'gain_peak_LPF / gain_DC_LPF'
+    let P_HPF = 'gain_peak_HPF / gain_DC_HPF'
+
+    let Q_LPF = 'sqrt((P_LPF^2 + P_LPF*sqrt(P_LPF^2-1))/2)' 
+    let Q_HPF = 'sqrt((P_HPF^2 + P_HPF*sqrt(P_HPF^2-1))/2)'
+
+    * Finding Q for BPF
+    meas ac gain_MAX_BPF max BPF_mag
+    * meas ac fo_BPF when BPF_mag=gain_MAX_BPF at=1e+06
+    * let fo_BPF = constants.analysis_last_at
+    let fo_BPF = 1.00e+06
+
+    let BPF_3db = gain_MAX_BPF * 0.7071
+
+    meas ac fL_BPF when BPF_mag = BPF_3db rise=1
+    meas ac fH_BPF when BPF_mag = BPF_3db fall=1
+    
+    let BW_BPF = fH_BPF - fL_BPF
+    let Q_BPF = fo_BPF / BW_BPF
+
+    * Finding Q for BSF
+    meas ac gain_MAX_BSF max BSF_mag
+    * meas ac fo_BPF when BPF_mag=gain_MAX_BPF at=1e+06
+    * let fo_BPF = constants.analysis_last_at
+    let fo_BSF = 1.00e+06
+
+    let BSF_3db = gain_MAX_BSF * 0.7071
+
+    meas ac fL_BSF when BSF_mag = BSF_3db fall=1
+    meas ac fH_BSF when BSF_mag = BSF_3db rise=1
+    
+    let BW_BSF = fH_BSF - fL_BSF
+    let Q_BSF = fo_BSF / BW_BSF 
+
+    * Printing Outputs
+    print Q_LPF Q_HPF Q_BPF Q_BSF
+
+    set appendwrite
+    write Testbench.raw VOUT_BPF VOUT_BSF VOUT_LPF VOUT_HPF
+
     * save VOUT_BPF VOUT_BSF VOUT_LPF VOUT_HPF
     * meas ac Gain MAX vmag(VOUTDIFF)
     * let Gain_dB = db(Gain)
     * print Gain_dB
-    set appendwrite
-    write Testbench.raw VOUT_BPF VOUT_BSF VOUT_LPF VOUT_HPF
 .endc
     

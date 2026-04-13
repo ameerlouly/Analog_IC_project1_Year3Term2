@@ -44,7 +44,8 @@ unitx=1
 logx=1
 logy=0
 color=4
-node="vout_lpf db20()"}
+node="vout_lpf db20()"
+}
 B 2 -1380 -100 -580 300 {flags=graph
 y1=-81
 y2=6.9
@@ -87,120 +88,203 @@ unitx=1
 logx=1
 logy=0
 }
-N -410 -150 -410 -130 {lab=GND}
-N -410 -150 -390 -150 {lab=GND}
-N -10 -130 -10 -110 {lab=GND}
-N -10 -130 20 -130 {lab=GND}
-N 410 -110 410 -90 {lab=GND}
-N 410 -110 430 -110 {lab=GND}
-N -10 150 -10 170 {lab=GND}
-N -10 150 30 150 {lab=GND}
-N 270 -160 280 -160 {lab=VOUT_LPF}
-N 10 -180 20 -180 {lab=#net1}
-N -60 170 -40 170 {lab=#net2}
-N -60 100 -40 100 {lab=#net2}
-N -40 100 -40 170 {lab=#net2}
-N -40 100 30 100 {lab=#net2}
-N -130 -180 -60 -180 {lab=VOUT_BPF}
-N -40 10 -40 100 {lab=#net2}
-N -40 10 120 10 {lab=#net2}
-N -130 100 -120 100 {lab=VOUT_BPF}
-N -130 -180 -130 100 {lab=VOUT_BPF}
-N 270 10 290 10 {lab=VOUT_BSF}
-N 270 10 270 120 {lab=VOUT_BSF}
-N 350 10 380 10 {lab=#net3}
-N 380 -160 380 10 {lab=#net3}
-N 380 -160 430 -160 {lab=#net3}
-N -250 -300 -130 -300 {lab=VOUT_BPF}
-N -130 -300 -130 -180 {lab=VOUT_BPF}
-N -400 -300 -310 -300 {lab=#net4}
-N -400 -300 -400 -200 {lab=#net4}
-N -400 -200 -390 -200 {lab=#net4}
-N 10 -300 70 -300 {lab=#net1}
-N 10 -300 10 -180 {lab=#net1}
-N 130 -300 270 -300 {lab=VOUT_LPF}
-N 270 -300 270 -160 {lab=VOUT_LPF}
-N 380 -240 380 -160 {lab=#net3}
-N 380 -240 480 -240 {lab=#net3}
-N 540 -240 700 -240 {lab=VOUT_HPF}
-N 700 -240 700 -140 {lab=VOUT_HPF}
-N 670 -140 700 -140 {lab=VOUT_HPF}
-N 700 -420 700 -240 {lab=VOUT_HPF}
-N -510 -420 700 -420 {lab=VOUT_HPF}
-N -510 -420 -510 -200 {lab=VOUT_HPF}
-N -510 -200 -480 -200 {lab=VOUT_HPF}
-N -160 170 -120 170 {lab=VIN}
-N -290 0 -290 30 {lab=VIN}
-N -150 -180 -130 -180 {lab=VOUT_BPF}
-N 180 10 270 10 {lab=VOUT_BSF}
-N 340 -160 380 -160 {lab=#net3}
-N -420 -200 -400 -200 {lab=#net4}
-N 0 -180 10 -180 {lab=#net1}
-N 260 -160 270 -160 {lab=VOUT_LPF}
-C {Idead_opamp.sym} 120 -130 0 0 {name=x1}
-C {Idead_opamp.sym} 530 -110 0 0 {name=x2}
-C {Idead_opamp.sym} -290 -150 0 0 {name=x3}
-C {Idead_opamp.sym} 130 150 0 0 {name=x4}
-C {devices/res.sym} -90 100 1 0 {name=R1
+B 2 -1380 -1360 -580 -960 {flags=graph
+y1=0.0032
+y2=180
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=10
+divx=5
+subdivx=8
+xlabmag=1.0
+ylabmag=1.0
+node=ph(vout_hpf)
+color=7
+dataset=-1
+unitx=1
+logx=1
+logy=0
+}
+B 2 -2200 -1360 -1400 -960 {flags=graph
+y1=-180
+y2=-2.6e-05
+ypos1=0
+ypos2=2
+divy=5
+subdivy=4
+unity=1
+x1=0
+x2=10
+divx=5
+subdivx=8
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=1
+logy=0
+color=4
+node=ph(vout_lpf)
+}
+B 2 -1380 -940 -580 -540 {flags=graph
+y1=-180
+y2=180
+ypos1=0
+ypos2=2
+divy=5
+subdivy=4
+unity=1
+x1=0
+x2=10
+divx=5
+subdivx=8
+xlabmag=1.0
+ylabmag=1.0
+node=ph(vout_bpf)
+color=10
+dataset=-1
+unitx=1
+logx=1
+logy=0
+}
+B 2 -2200 -940 -1400 -540 {flags=graph
+y1=-180
+y2=180
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=10
+divx=5
+subdivx=8
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=1
+logy=0
+color=7
+node=ph(vout_bsf)}
+N -280 -510 -280 -490 {lab=GND}
+N -280 -510 -260 -510 {lab=GND}
+N 120 -490 120 -470 {lab=GND}
+N 120 -490 150 -490 {lab=GND}
+N 540 -470 540 -450 {lab=GND}
+N 540 -470 560 -470 {lab=GND}
+N 120 -210 120 -190 {lab=GND}
+N 120 -210 160 -210 {lab=GND}
+N 400 -520 410 -520 {lab=VOUT_LPF}
+N 140 -540 150 -540 {lab=#net1}
+N 70 -190 90 -190 {lab=#net2}
+N 70 -260 90 -260 {lab=#net2}
+N 90 -260 90 -190 {lab=#net2}
+N 90 -260 160 -260 {lab=#net2}
+N 0 -540 70 -540 {lab=VOUT_BPF}
+N 90 -350 90 -260 {lab=#net2}
+N 90 -350 250 -350 {lab=#net2}
+N 0 -260 10 -260 {lab=VOUT_BPF}
+N 0 -540 0 -260 {lab=VOUT_BPF}
+N 400 -350 420 -350 {lab=VOUT_BSF}
+N 400 -350 400 -240 {lab=VOUT_BSF}
+N 480 -350 510 -350 {lab=#net3}
+N 510 -520 510 -350 {lab=#net3}
+N 510 -520 560 -520 {lab=#net3}
+N -120 -660 0 -660 {lab=VOUT_BPF}
+N 0 -660 0 -540 {lab=VOUT_BPF}
+N -270 -660 -180 -660 {lab=#net4}
+N -270 -660 -270 -560 {lab=#net4}
+N -270 -560 -260 -560 {lab=#net4}
+N 140 -660 200 -660 {lab=#net1}
+N 140 -660 140 -540 {lab=#net1}
+N 260 -660 400 -660 {lab=VOUT_LPF}
+N 400 -660 400 -520 {lab=VOUT_LPF}
+N 510 -600 510 -520 {lab=#net3}
+N 510 -600 610 -600 {lab=#net3}
+N 670 -600 830 -600 {lab=VOUT_HPF}
+N 830 -600 830 -500 {lab=VOUT_HPF}
+N 800 -500 830 -500 {lab=VOUT_HPF}
+N 830 -780 830 -600 {lab=VOUT_HPF}
+N -380 -780 830 -780 {lab=VOUT_HPF}
+N -380 -780 -380 -560 {lab=VOUT_HPF}
+N -380 -560 -350 -560 {lab=VOUT_HPF}
+N -30 -190 10 -190 {lab=VIN}
+N -160 -360 -160 -330 {lab=VIN}
+N -20 -540 0 -540 {lab=VOUT_BPF}
+N 310 -350 400 -350 {lab=VOUT_BSF}
+N 470 -520 510 -520 {lab=#net3}
+N -290 -560 -270 -560 {lab=#net4}
+N 130 -540 140 -540 {lab=#net1}
+N 390 -520 400 -520 {lab=VOUT_LPF}
+C {Idead_opamp.sym} 250 -490 0 0 {name=x1}
+C {Idead_opamp.sym} 660 -470 0 0 {name=x2}
+C {Idead_opamp.sym} -160 -510 0 0 {name=x3}
+C {Idead_opamp.sym} 260 -210 0 0 {name=x4}
+C {devices/res.sym} 40 -260 1 0 {name=R1
 value=22k
 footprint=1206
 device=resistor
 m=1}
-C {devices/capa.sym} -280 -300 1 0 {name=C1
+C {devices/capa.sym} -150 -660 1 0 {name=C1
 m=1
 value=16p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/gnd.sym} 410 -90 0 0 {name=l1 lab=GND}
-C {devices/gnd.sym} -10 -110 0 0 {name=l2 lab=GND}
-C {devices/gnd.sym} -410 -130 0 0 {name=l3 lab=GND}
-C {devices/gnd.sym} -10 170 0 0 {name=l4 lab=GND}
-C {devices/code.sym} 480 40 0 0 {name=Sim_Script only_toplevel=false value=".include sim_script.sim"}
-C {devices/res.sym} -90 170 1 0 {name=R2
+C {devices/gnd.sym} 540 -450 0 0 {name=l1 lab=GND}
+C {devices/gnd.sym} 120 -470 0 0 {name=l2 lab=GND}
+C {devices/gnd.sym} -280 -490 0 0 {name=l3 lab=GND}
+C {devices/gnd.sym} 120 -190 0 0 {name=l4 lab=GND}
+C {devices/code.sym} 610 -320 0 0 {name=Sim_Script only_toplevel=false value=".include sim_script.sim"}
+C {devices/res.sym} 40 -190 1 0 {name=R2
 value=10k
 footprint=1206
 device=resistor
 m=1}
-C {devices/res.sym} 150 10 1 0 {name=R3
+C {devices/res.sym} 280 -350 1 0 {name=R3
 value=10k
 footprint=1206
 device=resistor
 m=1}
-C {devices/res.sym} 320 10 1 0 {name=R4
+C {devices/res.sym} 450 -350 1 0 {name=R4
 value=10k
 footprint=1206
 device=resistor
 m=1}
-C {devices/res.sym} -450 -200 1 0 {name=R5
+C {devices/res.sym} -320 -560 1 0 {name=R5
 value=10k
 footprint=1206
 device=resistor
 m=1}
-C {devices/res.sym} -30 -180 1 0 {name=R6
+C {devices/res.sym} 100 -540 1 0 {name=R6
 value=10k
 footprint=1206
 device=resistor
 m=1}
-C {devices/res.sym} 310 -160 1 0 {name=R7
+C {devices/res.sym} 440 -520 1 0 {name=R7
 value=10k
 footprint=1206
 device=resistor
 m=1}
-C {devices/res.sym} 510 -240 1 0 {name=R8
+C {devices/res.sym} 640 -600 1 0 {name=R8
 value=10k
 footprint=1206
 device=resistor
 m=1}
-C {devices/capa.sym} 100 -300 1 0 {name=C2
+C {devices/capa.sym} 230 -660 1 0 {name=C2
 m=1
 value=16p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/lab_pin.sym} -160 170 0 0 {name=p1 sig_type=std_logic lab=VIN}
-C {devices/lab_pin.sym} -100 -180 3 0 {name=p2 sig_type=std_logic lab=VOUT_BPF}
-C {devices/lab_pin.sym} 270 100 2 0 {name=p3 sig_type=std_logic lab=VOUT_BSF}
-C {devices/lab_pin.sym} 270 -160 3 0 {name=p4 sig_type=std_logic lab=VOUT_LPF}
-C {devices/lab_pin.sym} 700 -140 2 0 {name=p5 sig_type=std_logic lab=VOUT_HPF}
-C {devices/vsource.sym} -290 60 0 0 {name=V1 value="AC 1" savecurrent=false}
-C {devices/gnd.sym} -290 90 0 0 {name=l5 lab=GND}
-C {devices/lab_pin.sym} -290 0 0 0 {name=p6 sig_type=std_logic lab=VIN}
+C {devices/lab_pin.sym} -30 -190 0 0 {name=p1 sig_type=std_logic lab=VIN}
+C {devices/lab_pin.sym} 30 -540 3 0 {name=p2 sig_type=std_logic lab=VOUT_BPF}
+C {devices/lab_pin.sym} 400 -260 2 0 {name=p3 sig_type=std_logic lab=VOUT_BSF}
+C {devices/lab_pin.sym} 400 -520 3 0 {name=p4 sig_type=std_logic lab=VOUT_LPF}
+C {devices/lab_pin.sym} 830 -500 2 0 {name=p5 sig_type=std_logic lab=VOUT_HPF}
+C {devices/vsource.sym} -160 -300 0 0 {name=V1 value="AC 1" savecurrent=false}
+C {devices/gnd.sym} -160 -270 0 0 {name=l5 lab=GND}
+C {devices/lab_pin.sym} -160 -360 0 0 {name=p6 sig_type=std_logic lab=VIN}
